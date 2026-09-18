@@ -1,506 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Topnotch Kasifield | Kota & Chips</title>
-
-  <meta name="description" content="Topnotch Kasifield - Fresh, tasty and affordable Kota and chips. Open daily. Order on WhatsApp.">
-  <meta name="theme-color" content="#111111">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #171717;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(17,17,17,0.97);
-      border-bottom: 2px solid #e4a900;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 14px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      color: white;
-      font-size: 21px;
-      font-weight: 900;
-      letter-spacing: .5px;
-    }
-
-    .brand span {
-      color: #e4a900;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        radial-gradient(circle at top right, rgba(228,169,0,.35), transparent 35%),
-        linear-gradient(135deg, #101010, #242424);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      right: -100px;
-      bottom: -100px;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-label {
-      display: inline-block;
-      padding: 8px 15px;
-      border: 1px solid #e4a900;
-      color: #e4a900;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 10vw, 82px);
-      line-height: .95;
-      font-weight: 950;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #e4a900;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #ddd;
-      margin-bottom: 28px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 8px;
-      font-weight: 800;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: #e4a900;
-      color: #111;
-    }
-
-    .btn-secondary {
-      border: 1px solid #fff;
-      color: white;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    /* GENERAL */
-    section {
-      padding: 70px 18px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 38px;
-    }
-
-    .section-heading small {
-      color: #b18400;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-heading h2 {
-      font-size: 36px;
-      margin-top: 7px;
-      text-transform: uppercase;
-    }
-
-    .section-heading p {
-      color: #666;
-      max-width: 650px;
-      margin: 8px auto;
-    }
-
-    /* FEATURE STRIP */
-    .features {
-      background: #111;
-      color: white;
-      padding: 24px 18px;
-    }
-
-    .feature-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      text-align: center;
-    }
-
-    .feature {
-      padding: 12px;
-    }
-
-    .feature strong {
-      display: block;
-      color: #e4a900;
-      font-size: 18px;
-      margin-bottom: 3px;
-    }
-
-    .feature span {
-      color: #ccc;
-      font-size: 13px;
-    }
-
-    /* MENU */
-    .menu-section {
-      background: white;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .menu-card {
-      background: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 14px;
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-      transition: .2s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .menu-card::after {
-      content: "";
-      position: absolute;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: rgba(228,169,0,.08);
-      right: -25px;
-      top: -25px;
-    }
-
-    .menu-card h3 {
-      font-size: 23px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .price {
-      color: #c18e00;
-      font-size: 27px;
-      font-weight: 950;
-      margin-bottom: 12px;
-    }
-
-    .menu-card p {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .order-btn {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    /* CHIPS */
-    .chips-box {
-      margin-top: 22px;
-      background: #111;
-      color: white;
-      border-radius: 15px;
-      padding: 28px;
-    }
-
-    .chips-box h3 {
-      color: #e4a900;
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .chips-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .chip-price {
-      border: 1px solid #444;
-      border-radius: 10px;
-      padding: 18px;
-      text-align: center;
-    }
-
-    .chip-price strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .chip-price span {
-      color: #e4a900;
-      font-size: 24px;
-      font-weight: 900;
-    }
-
-    /* PHOTO SECTION */
-    .gallery {
-      background: #f1f1f1;
-    }
-
-    .photo-area {
-      border-radius: 18px;
-      min-height: 330px;
-      background:
-        linear-gradient(135deg, #171717, #343434);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-      color: white;
-      border: 1px solid #333;
-    }
-
-    .photo-area h3 {
-      color: #e4a900;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .photo-area p {
-      color: #ccc;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-      align-items: stretch;
-    }
-
-    .about-card {
-      background: white;
-      border-radius: 15px;
-      padding: 30px;
-      border: 1px solid #ddd;
-    }
-
-    .about-card h3 {
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-
-    .about-card p {
-      color: #666;
-    }
-
-    .location-card {
-      background: #111;
-      color: white;
-    }
-
-    .location-card p {
-      color: #ccc;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, #111, #252525);
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 38px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .cta p {
-      color: #ccc;
-      margin-bottom: 24px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #080808;
-      color: #aaa;
-      text-align: center;
-      padding: 30px 18px;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 2000;
-      background: #25D366;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 50px;
-      font-weight: 900;
-      box-shadow: 0 8px 25px rgba(0,0,0,.25);
-    }
-
-    /* MOBILE */
-    @media(max-width: 700px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        min-height: 500px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .chips-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 55px 15px;
-      }
-
-      .section-heading h2 {
-        font-size: 30px;
-      }
-
-      .whatsapp {
-        right: 12px;
-        bottom: 12px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Topnotch Kasifield | Kota Menu</title>
+
+<meta name="description" content="Topnotch Kasifield - Fresh, Tasty and Affordable Kota and Chips. Open Daily.">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #171717;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111;
+  border-bottom: 3px solid #e4a900;
+}
+
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: #e4a900;
+}
+
+.nav a {
+  color: white;
+  margin-left: 18px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  min-height: 520px;
+  padding: 70px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+  background:
+    radial-gradient(circle at top right, rgba(228,169,0,.35), transparent 35%),
+    linear-gradient(135deg, #0d0d0d, #292929);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #e4a900;
+  color: #e4a900;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 10vw, 82px);
+  line-height: .95;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: #e4a900;
+}
+
+.hero p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.primary {
+  background: #e4a900;
+  color: #111;
+}
+
+.secondary {
+  border: 1px solid white;
+  color: white;
+}
+
+/* FEATURE BAR */
+.features {
+  background: #111;
+  color: white;
+  padding: 25px 15px;
+}
+
+.feature-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.feature strong {
+  display: block;
+  color: #e4a900;
+  font-size: 17px;
+}
+
+.feature span {
+  color: #ccc;
+  font-size: 13px;
+}
+
+/* GENERAL */
+section {
+  padding: 65px 18px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.heading small {
+  color: #b18400;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.heading p {
+  color: #666;
+  max-width: 650px;
+  margin: 8px auto;
+}
+
+/* MENU */
+.menu {
+  background: white;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.menu-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.05);
+}
+
+.menu-card h3 {
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+.price {
+  color: #b18400;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.ingredients {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.ingredients li {
+  padding: 5px 0;
+  border-bottom: 1px dashed #ddd;
+  color: #444;
+  font-size: 15px;
+}
+
+.ingredients li::before {
+  content: "✓";
+  color: #b18400;
+  font-weight: bold;
+  margin-right: 9px;
+}
+
+.order-btn {
+  display: inline-block;
+  background: #111;
+  color: white;
+  padding: 11px 17px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* CHIPS */
+.chips {
+  margin-top: 25px;
+  background: #111;
+  color: white;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.chips h3 {
+  color: #e4a900;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.chips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.chip {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+}
+
+.chip strong {
+  display: block;
+}
+
+.chip span {
+  display: block;
+  color: #e4a900;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+/* GALLERY */
+.gallery {
+  background: #eee;
+}
+
+.gallery-box {
+  min-height: 300px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #151515, #333);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 30px;
+}
+
+.gallery-box h3 {
+  color: #e4a900;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.about-card h3 {
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+
+.about-card p {
+  color: #666;
+}
+
+.dark-card {
+  background: #111;
+  color: white;
+}
+
+.dark-card p {
+  color: #ccc;
+}
+
+/* CONTACT */
+.contact {
+  background: linear-gradient(135deg, #111, #292929);
+  color: white;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 38px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+  background: #080808;
+  color: #aaa;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 13px;
+}
+
+footer strong {
+  color: white;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2000;
+  background: #25D366;
+  color: white;
+  padding: 13px 19px;
+  border-radius: 50px;
+  font-weight: 900;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+
+/* MOBILE */
+@media(max-width:700px) {
+
+  .nav a {
+    display: none;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 15px;
+  }
+
+  .heading h2 {
+    font-size: 30px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="nav">
-    <div class="brand">TOPNOTCH <span>KASIFIELD</span></div>
+    <div class="logo">
+      TOPNOTCH <span>KASIFIELD</span>
+    </div>
 
-    <div class="nav-links">
+    <div>
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
       <a href="#about">About</a>
@@ -509,11 +460,15 @@
   </div>
 </header>
 
-<!-- HERO -->
+
+<!-- HOME -->
 <section class="hero" id="home">
+
   <div class="hero-content">
 
-    <div class="hero-label">Fresh • Tasty • Affordable</div>
+    <div class="badge">
+      FRESH • TASTY • AFFORDABLE
+    </div>
 
     <h1>
       TOPNOTCH<br>
@@ -521,24 +476,31 @@
     </h1>
 
     <p>
-      Quality Kota and chips made for the kasi.
-      Choose your Kota, choose your size and enjoy.
+      Delicious Kota and chips made fresh for you.
+      Choose your favourite and enjoy.
     </p>
 
     <div class="buttons">
-      <a class="btn btn-primary" href="#menu">View Menu</a>
 
-      <a class="btn btn-secondary"
-         href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20to%20place%20an%20order.">
-        Order on WhatsApp
+      <a class="btn primary" href="#menu">
+        VIEW MENU
       </a>
+
+      <a class="btn secondary"
+         href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20to%20place%20an%20order.">
+        ORDER ON WHATSAPP
+      </a>
+
     </div>
 
   </div>
+
 </section>
+
 
 <!-- FEATURES -->
 <div class="features">
+
   <div class="feature-grid">
 
     <div class="feature">
@@ -557,99 +519,176 @@
     </div>
 
   </div>
+
 </div>
 
+
 <!-- MENU -->
-<section class="menu-section" id="menu">
+<section class="menu" id="menu">
 
   <div class="container">
 
-    <div class="section-heading">
+    <div class="heading">
       <small>Our Menu</small>
-      <h2>Kota Collection</h2>
+      <h2>Kota Menu</h2>
       <p>
-        Five different Kota options, from Bronze to Diamond.
+        Choose your favourite Kota from Bronze to Diamond.
       </p>
     </div>
 
+
     <div class="menu-grid">
 
+
+      <!-- BRONZE -->
       <div class="menu-card">
+
         <h3>Bronze Kota</h3>
         <div class="price">R25</div>
-        <p>Our Bronze Kota option.</p>
+
+        <ul class="ingredients">
+          <li>Chips</li>
+          <li>Polony</li>
+          <li>Vienna</li>
+          <li>Russian</li>
+          <li>Atchar / Gravy</li>
+          <li>Lettuce</li>
+        </ul>
 
         <a class="order-btn"
            href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20a%20Bronze%20Kota%20for%20R25.">
-          Order R25
+          ORDER R25
         </a>
+
       </div>
 
+
+      <!-- SILVER -->
       <div class="menu-card">
+
         <h3>Silver Kota</h3>
         <div class="price">R35</div>
-        <p>Our Silver Kota option.</p>
+
+        <ul class="ingredients">
+          <li>Chips</li>
+          <li>Polony</li>
+          <li>Vienna</li>
+          <li>Russian</li>
+          <li>Cheese</li>
+          <li>Atchar / Gravy</li>
+          <li>Lettuce</li>
+        </ul>
 
         <a class="order-btn"
            href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20a%20Silver%20Kota%20for%20R35.">
-          Order R35
+          ORDER R35
         </a>
+
       </div>
 
+
+      <!-- GOLD -->
       <div class="menu-card">
+
         <h3>Gold Kota</h3>
         <div class="price">R45</div>
-        <p>Our Gold Kota option.</p>
+
+        <ul class="ingredients">
+          <li>Chips</li>
+          <li>Polony</li>
+          <li>Vienna</li>
+          <li>Russian</li>
+          <li>Full Russian</li>
+          <li>Egg</li>
+          <li>Cheese</li>
+          <li>Atchar / Gravy</li>
+          <li>Lettuce</li>
+        </ul>
 
         <a class="order-btn"
            href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20a%20Gold%20Kota%20for%20R45.">
-          Order R45
+          ORDER R45
         </a>
+
       </div>
 
+
+      <!-- PLATINUM -->
       <div class="menu-card">
+
         <h3>Platinum Kota</h3>
         <div class="price">R55</div>
-        <p>Our Platinum Kota option.</p>
+
+        <ul class="ingredients">
+          <li>Chips</li>
+          <li>Russian</li>
+          <li>Egg</li>
+          <li>Cheese</li>
+          <li>Atchar / Gravy</li>
+          <li>Lettuce</li>
+          <li>Polony</li>
+          <li>Bacon</li>
+          <li>Ham</li>
+          <li>Vienna</li>
+        </ul>
 
         <a class="order-btn"
            href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20a%20Platinum%20Kota%20for%20R55.">
-          Order R55
+          ORDER R55
         </a>
+
       </div>
 
+
+      <!-- DIAMOND -->
       <div class="menu-card">
+
         <h3>Diamond Kota</h3>
         <div class="price">R65</div>
-        <p>Our Diamond Kota option.</p>
+
+        <ul class="ingredients">
+          <li>Chips</li>
+          <li>Russian</li>
+          <li>Egg</li>
+          <li>Cheese</li>
+          <li>Atchar / Gravy</li>
+          <li>Lettuce</li>
+          <li>Polony</li>
+          <li>Bacon</li>
+          <li>Ham</li>
+          <li>Vienna</li>
+          <li>Beef Patty</li>
+        </ul>
 
         <a class="order-btn"
            href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20a%20Diamond%20Kota%20for%20R65.">
-          Order R65
+          ORDER R65
         </a>
+
       </div>
 
     </div>
 
+
     <!-- CHIPS -->
-    <div class="chips-box">
+    <div class="chips">
 
       <h3>Chips</h3>
 
       <div class="chips-grid">
 
-        <div class="chip-price">
-          <strong>Small</strong>
+        <div class="chip">
+          <strong>SMALL</strong>
           <span>R20</span>
         </div>
 
-        <div class="chip-price">
-          <strong>Medium</strong>
+        <div class="chip">
+          <strong>MEDIUM</strong>
           <span>R30</span>
         </div>
 
-        <div class="chip-price">
-          <strong>Large</strong>
+        <div class="chip">
+          <strong>LARGE</strong>
           <span>R40</span>
         </div>
 
@@ -658,57 +697,68 @@
     </div>
 
   </div>
+
 </section>
 
-<!-- PHOTOS -->
+
+<!-- GALLERY -->
 <section class="gallery">
 
   <div class="container">
 
-    <div class="section-heading">
-      <small>Coming Next</small>
+    <div class="heading">
+      <small>Coming Soon</small>
       <h2>Food Gallery</h2>
       <p>
-        We'll add Topnotch Kasifield's real food photos here.
+        Real Topnotch Kasifield food photos will be added here.
       </p>
     </div>
 
-    <div class="photo-area">
+    <div class="gallery-box">
+
       <div>
-        <h3>Real Food. Real Taste.</h3>
+        <h3>REAL FOOD. REAL TASTE.</h3>
+
         <p>
-          Your actual Kota and food photographs will be displayed here.
+          We're going to add the business's actual food photos here.
         </p>
       </div>
+
     </div>
 
   </div>
 
 </section>
 
+
 <!-- ABOUT -->
 <section id="about">
 
   <div class="container">
 
-    <div class="section-heading">
-      <small>About Topnotch</small>
-      <h2>Made for the Kasi</h2>
+    <div class="heading">
+      <small>About Us</small>
+      <h2>Topnotch Kasifield</h2>
     </div>
 
     <div class="about-grid">
 
       <div class="about-card">
+
         <h3>Fresh • Tasty • Affordable</h3>
+
         <p>
-          Topnotch Kasifield offers a selection of Kota options
-          at different price points, plus small, medium and large
-          portions of chips.
+          Topnotch Kasifield serves a selection of Kota options
+          together with small, medium and large chips.
         </p>
+
       </div>
 
-      <div class="about-card location-card">
+
+      <div class="about-card dark-card">
+
         <h3>Find Us</h3>
+
         <p>
           Next to Score Supermarket
         </p>
@@ -718,6 +768,7 @@
         <p>
           Open Daily
         </p>
+
       </div>
 
     </div>
@@ -726,28 +777,29 @@
 
 </section>
 
+
 <!-- CONTACT -->
-<section class="cta" id="contact">
+<section class="contact" id="contact">
 
   <div class="container">
 
-    <h2>Ready to Order?</h2>
+    <h2>Ready To Order?</h2>
 
     <p>
-      Call or WhatsApp Topnotch Kasifield on
-      <strong>073 064 6175</strong>.
+      Call or WhatsApp us on
+      <strong>073 064 6175</strong>
     </p>
 
     <div class="buttons">
 
-      <a class="btn btn-primary"
+      <a class="btn primary"
          href="tel:+27730646175">
-        Call 073 064 6175
+        CALL NOW
       </a>
 
-      <a class="btn btn-secondary"
+      <a class="btn secondary"
          href="https://wa.me/27730646175?text=Hi%20Topnotch%20Kasifield%2C%20I%20would%20like%20to%20place%20an%20order.">
-        WhatsApp Us
+        WHATSAPP
       </a>
 
     </div>
@@ -756,14 +808,30 @@
 
 </section>
 
+
 <!-- FOOTER -->
 <footer>
-  <strong>Topnotch Kasifield</strong><br>
-  Fresh • Tasty • Affordable<br><br>
-  Next to Score Supermarket<br>
-  073 064 6175<br><br>
+
+  <strong>Topnotch Kasifield</strong>
+
+  <br><br>
+
+  Fresh • Tasty • Affordable
+
+  <br>
+
+  Next to Score Supermarket
+
+  <br>
+
+  073 064 6175
+
+  <br><br>
+
   © 2026 Topnotch Kasifield
+
 </footer>
+
 
 <!-- FLOATING WHATSAPP -->
 <a class="whatsapp"
@@ -772,4 +840,4 @@
 </a>
 
 </body>
-  </html>
+</html>
